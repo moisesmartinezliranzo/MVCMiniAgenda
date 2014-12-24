@@ -9,19 +9,53 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link href="@Url.Content("~/Content/jquery.mobile.theme-1.4.2.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/jquery.mobile-1.4.2.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/jquery.mobile.external-png-1.4.2.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/jquery.mobile.icons-1.4.2.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/jquery.mobile.inline-png-1.4.2.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/jquery.mobile.inline-svg-1.4.2.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/jquery.mobile.structure-1.4.2.css")" rel="stylesheet" />
+    
     <title>Detalles</title>
 </head>
 <body>
-    <h2>Perfil de contacto</h2>
-    <div>
-        <ul>
-            <li><strong>Nombre: </strong>@Model.Nombre</li>
-            <li><strong>Apellido: </strong>@Model.Apellido</li>
-            <li><strong>Email: </strong>@Model.Email</li>
-            <li><strong>Telefono: </strong>@Model.Telefono</li>
-            <li><strong>Celular: </strong>@Model.Telefono</li>
-            <li><strong>Direccion: </strong>@Model.Direccion</li>
-        </ul>
+    <div data-role="page" id="Perfil">
+        <div data-role="header" data-position="inline">
+	        <a href="/" data-role="button" data-icon="arrow-l" data-iconpos="notext" data-theme="c" data-inline="true"></a>
+            <h2>Perfil de contacto</h2>
+            <a href="#opciones" data-icon="bars" data-iconpos="notext" data-theme="c" data-inline="true">Bars</a>
+        </div>
+        
+        <div data-role="main" class="ui-content">
+            <ul data-role="listview">               
+                <li><strong>Nombre: </strong>@Model.Nombre</li>
+                <li><strong>Apellido: </strong>@Model.Apellido</li>
+                <li><strong>Email: </strong>@Model.Email</li>
+                <li><strong>Telefono: </strong>@Model.Telefono</li>
+                <li><strong>Celular: </strong>@Model.Telefono</li>
+                <li><strong>Direccion: </strong>@Model.Direccion</li>
+            </ul>
+        </div>        
     </div>
+
+    <div data-role="page" data-dialog="true" id="opciones">
+            <div data-role="header">
+                <h1>Que desea hacer?</h1>
+            </div>
+
+            <div data-role="main" class="ui-content">
+                <a href="@Url.Action("editar", new { id=@Model.Id})" data-role="button" data-icon="edit"  data-theme="c">Editar</a>
+                <a href="#" data-role="button" data-icon="delete"  data-theme="c">Eliminar</a>
+            </div>
+
+            <div data-role="footer">
+                <h1></h1>
+            </div>
+        </div>
+
+    <script src="@Url.Content("~/Scripts/jquery-1.8.3.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.mobile-1.4.2.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery-1.8.3.intellisense.js")"></script>
 </body>
 </html>

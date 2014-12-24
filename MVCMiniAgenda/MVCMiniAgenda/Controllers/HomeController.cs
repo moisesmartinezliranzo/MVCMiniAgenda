@@ -25,5 +25,29 @@ namespace MVCMiniAgenda.Controllers
             return View(miUsuario);
         }
 
+        
+        public ActionResult Editar(int id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            AgendaContext miAgendaContext = new AgendaContext();
+            Usuarios miUsuario = miAgendaContext.LosUsuarios.Find(id);
+            
+            if (miUsuario == null)
+            {
+                return HttpNotFound();
+            }
+            return View(miUsuario);
+            
+        }
+
+        [HttpPost]
+        public ActionResult Editar(int id)
+        {
+            return View();
+        }
+
     }
 }

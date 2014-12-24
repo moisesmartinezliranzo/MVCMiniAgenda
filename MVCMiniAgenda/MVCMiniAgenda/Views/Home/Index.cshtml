@@ -10,21 +10,35 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Tus Contactos</title>
+    <link href="@Url.Content("~/Content/jquery.mobile.theme-1.4.2.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/jquery.mobile-1.4.2.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/jquery.mobile.external-png-1.4.2.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/jquery.mobile.icons-1.4.2.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/jquery.mobile.inline-png-1.4.2.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/jquery.mobile.inline-svg-1.4.2.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/jquery.mobile.structure-1.4.2.css")" rel="stylesheet" />
 </head>
 <body>
-    <h2>Lista de contactos</h2>
-    
-    <div class="wrap-contactos">
-        <div class="contantos">
-            <ul>
-                @foreach(var contactos in Model)
-                {
-                    <li>@Html.ActionLink(contactos.Nombre + " " + contactos.Apellido, "detalles", new { id = contactos.Id})</li>
-                    
-                }
-            </ul>
-        </div>
-    </div>
+    <div data-role="page" id="Perfil">
+        <div data-role="header" data-position="inline">
+            <h2>Lista de contacto</h2>
 
+        </div>
+    
+        
+            <div data-role="main" class="ui-content">
+                <ul data-role="listview" data-autodividers="false" data-filter="true" data-inset="true" data-filter-placeholder="Buscar...">
+                    @foreach(var contactos in Model)
+                    {
+                        <li>@Html.ActionLink(contactos.Nombre + " " + contactos.Apellido, "detalles", new { id = contactos.Id})</li>
+                    
+                    }
+                </ul>
+            </div>
+      
+    </div>
+    <script src="@Url.Content("~/Scripts/jquery-1.8.3.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.mobile-1.4.2.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery-1.8.3.intellisense.js")"></script>
 </body>
 </html>
