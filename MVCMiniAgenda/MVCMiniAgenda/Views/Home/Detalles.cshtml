@@ -1,0 +1,27 @@
+﻿@model MVCMiniAgenda.Models.Usuarios
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detalles</title>
+</head>
+<body>
+    <h2>Perfil de contacto</h2>
+    <div>
+        <ul>
+            <li><strong>Nombre: </strong>@Model.Nombre</li>
+            <li><strong>Apellido: </strong>@Model.Apellido</li>
+            <li><strong>Email: </strong>@Model.Email</li>
+            <li><strong>Telefono: </strong>@Model.Telefono</li>
+            <li><strong>Celular: </strong>@Model.Telefono</li>
+            <li><strong>Direccion: </strong>@Model.Direccion</li>
+        </ul>
+    </div>
+</body>
+</html>

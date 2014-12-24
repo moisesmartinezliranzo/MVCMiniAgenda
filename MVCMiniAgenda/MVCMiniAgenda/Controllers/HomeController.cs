@@ -18,5 +18,12 @@ namespace MVCMiniAgenda.Controllers
             return View(miAgendaContext.LosUsuarios.ToList());
         }
 
+        public ActionResult Detalles(int id)
+        {
+            AgendaContext miAgendaContext = new AgendaContext();
+            Usuarios miUsuario =  miAgendaContext.LosUsuarios.Single(u => u.Id == id);
+            return View(miUsuario);
+        }
+
     }
 }
