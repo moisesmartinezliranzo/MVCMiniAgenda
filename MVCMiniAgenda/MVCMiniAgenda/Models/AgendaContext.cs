@@ -6,7 +6,7 @@ using System.Data.Entity;
 
 namespace MVCMiniAgenda.Models
 {
-    public class AgendaContext
+    public class AgendaContext : DbContext
     {
         public DbSet<Usuarios> LosUsuarios { get; set; }
     }

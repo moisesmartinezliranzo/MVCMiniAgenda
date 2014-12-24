@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Routing;
+using System.Data.Entity;
 
 namespace MVCMiniAgenda
 {
@@ -14,6 +15,7 @@ namespace MVCMiniAgenda
     {
         protected void Application_Start()
         {
+            Database.SetInitializer<MVCMiniAgenda.Models.AgendaContext>(null);
             AreaRegistration.RegisterAllAreas();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);
